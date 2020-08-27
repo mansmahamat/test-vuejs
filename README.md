@@ -57,9 +57,7 @@ Par exemple, si je choisis d'utiliser [l'API TMDB](https://www.themoviedb.org/do
 * Une vue de gestion des favoris, qui liste les films favoris, permet de voir leur détail au clic, et de supprimer un favori  
 * La landing page reste totalement libre et optionnelle, à vous de voir si vous avez une idée ;)  
 
-** Essayez de choisir une API un minimum riche : l'API des Cat Facts c'est mignon, 
-mais le contenu sera vite limité, surtout sur la page détails ! Favorisez des API avec des images, une pagination, 
-ou même avec du son ou une galerie de médias si vous êtes vraiment motivés ;) ** 
+**Essayez de choisir une API un minimum riche : l'API des Cat Facts c'est mignon, mais le contenu sera vite limité, surtout sur la page détails ! Favorisez des API avec des images, une pagination, ou même avec du son ou une galerie de médias si vous êtes vraiment motivés ;)**   
 
 ### Détail des fonctionnalités attendues pour chaque vue (= page)
 
