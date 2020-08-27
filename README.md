@@ -59,6 +59,9 @@ Par exemple, si je choisis d'utiliser [l'API TMDB](https://www.themoviedb.org/do
 
 **Essayez de choisir une API un minimum riche : l'API des Cat Facts c'est mignon, mais le contenu sera vite limité, surtout sur la page détails ! Favorisez des API avec des images, une pagination, ou même avec du son ou une galerie de médias si vous êtes vraiment motivés ;)**   
 
+![docs/example1.png]
+
+
 ### Détail des fonctionnalités attendues pour chaque vue (= page)
 
 #### Gabarit de l'application
