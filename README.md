@@ -72,7 +72,8 @@ L'application doit disposer :
 * d'une zone de contenu principale  
 * d'un footer avec un copyright  
 
-On aime quand le footer, s'il a un fond différent, soit bien ferré au bas de la page, même si le contenu n'est pas assez haut ;)  
+On aime quand le footer, s'il a un fond différent, soit bien ferré au bas de la page, 
+même si le contenu n'est pas assez haut ;)  
 
 #### Page de listing
 Sur la page de listing, vous devrez afficher un nombre arbitraire d'éléments, et proposer une pagination afin de charger de nouveaux éléments.  
@@ -115,21 +116,24 @@ ce que vous auriez aimé faire mieux avec plus de temps, ce qui vous semble dép
 * Pour vous, c'est une excellente pratique à conserver au long de votre carrière !  
 
 ## Rendu du test
-Pour rendre votre projet :
-* Créez une branche avec votre nom sur le repo et faites tout vos commits sur celle-ci.  
+Pour rendre votre projet :  
+* Créez une branche `[nom-prenom]` sur le repo et faites tout vos commits sur celle-ci.
+  **Attention, créez la branche localement et ne pushez pas cette dernière sur gitlab.kissmy.dev !**  
 * Créez un repo privé sur GitHub pour héberger votre branche  
-* Ajoutez votre repo privé comme 
+* Ajoutez votre repo privé comme upstream : `git remote add upstream https://[URL DE VOTRE REPO].git`  
+* Pushez sur ce repo : `git push upstream [NOM DE VOTRE BRANCHE]`  
+* Invitez les utilisateurs GitHub @superbiche et @seifane sur votre repo afin de nous permettre de faire la revue de votre test  
+* Envoyez un mail sur tech@kissmy.co lorsque votre test est terminé, et attendez notre retour ;)  
 
 
 ### Bonus général
-Buildez une image de votre test fini et pushez la sur le registry du repo avec le tag latest(registry.kissmy.cloud/kissmy/recruitment/test-vue/{VOTRE_NOM})
+Buildez une image de votre test fini et pushez la sur Docker Hub avec le tag latest : `votre-nom-ou-nickname/test-vue:latest`
 
 ### Notes importantes
 **N'oubliez pas le journal de bord !**
 **Vous pouvez déjà utiliser SASS, mais aussi installer de nouvelles dépendances - Bootstrap, Tailwind, Vuetify... - manuellement ou en utilisant Vue-CLI**
 
-Bonne chance !
-
+Bonne chance <3
 
 ## Ressources potentiellement utiles
 - https://laracasts.com/series/learn-vue-2-step-by-step  
