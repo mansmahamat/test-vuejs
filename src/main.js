@@ -3,6 +3,9 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+// eslint-disable-next-line no-unused-expressions
+import('@/assets/styles/index.css');
+
 Vue.config.productionTip = false;
 
 new Vue({
