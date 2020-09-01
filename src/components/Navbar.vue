@@ -2,7 +2,9 @@
     <div class="font-sans antialiased" id="app">
       <nav class="flex items-center justify-between flex-wrap bg-white p-6">
       <div class="flex items-center flex-no-shrink text-white mr-6">
+        <router-link to="/">
         <img alt="Vue logo" src="../assets/breakingBad.png" class=" ml-6 h-12">
+        </router-link>
       </div>
       <div class="block sm:hidden">
         <button @click="isOpen = !isOpen" class=" buttonNav hover:border-white">

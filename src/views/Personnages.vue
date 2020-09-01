@@ -35,7 +35,6 @@ export default {
 <template>
 
   <div class="container mx-auto px-4">
-    <h1>Liste complète des personnages</h1>
     <section class="my-8 border-2 border-black rounded-lg py-4 px-2 bg-green-700 text-white"
              v-if="error">
       <p>
@@ -49,11 +48,12 @@ export default {
           <div class="flex flex-wrap -m-4">
             <div v-for="character in charactersInfo"
                   :key="character.char_id" class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative h-48 rounded overflow-hidden">
+              <router-link :to="{ name: 'character-detail', params: {character: character.name }}">
+              <div class="block relative h-48 rounded overflow-hidden">
                 <img v-bind:alt="character.name"
                       class="object-contain object-center w-full h-full block"
                       v-bind:src="character.img" >
-              </a>
+              </div>
               <div class="mt-4 text-center">
                 <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
                     Saison : {{ character.appearance }}
@@ -61,6 +61,7 @@ export default {
                 <h2 class="text-gray-900 title-font text-lg font-medium">{{ character.name }}</h2>
                 <p class="mt-1">{{ character.nickname }}</p>
               </div>
+              </router-link>
             </div>
           </div>
         </div>
@@ -93,24 +94,3 @@ export default {
   </div>
 
 </template>
-
-<style scoped>
-/* loading animation */
-.loader {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #2f855a;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-  margin-bottom: 100px;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.loaderFlex {
-  display: flex;
-  justify-content: center;
-}
-</style>
