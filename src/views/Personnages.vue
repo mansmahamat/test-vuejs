@@ -1,6 +1,4 @@
-/* eslint-disable no-return-assign */
 <script>
-import axios from 'axios';
 
 export default {
   name: 'Personnages',
@@ -8,27 +6,23 @@ export default {
     return {
       pending: false,
       loading: false,
-      charactersInfo: [],
-      quoteInfo: [],
       errorQuote: null,
       error: null,
       isOpen: false,
     };
   },
+  computed: {
+    characters() {
+      return this.$store.state.characters;
+    },
+    quotes() {
+      return this.$store.state.quotes;
+    },
+  },
   mounted() {
     // API request
-    this.pending = true;
-    axios
-      .get('https://www.breakingbadapi.com/api/characters')
-      .then((response) => { (this.charactersInfo = response.data); console.log(response.data); })
-      .catch((error) => { (this.error = error); console.log(error); })
-      .finally(() => { this.pending = false; });
-    this.loading = true;
-    axios
-      .get('https://www.breakingbadapi.com/api/quote?author=Walter+White')
-      .then((response) => { (this.quoteInfo = response.data); console.log(response.data); })
-      .catch((error) => { (this.errorQuote = error); console.log(error); })
-      .finally(() => { this.loading = false; });
+    this.$store.dispatch('getCharacters');
+    this.$store.dispatch('getQuotes');
   },
 };
 </script>
@@ -46,9 +40,10 @@ export default {
       <section class="text-gray-700 body-font">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap -m-4">
-            <div v-for="character in charactersInfo"
+            <div v-for="character in characters"
                   :key="character.char_id" class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <router-link :to="{ name: 'character-detail', params: {character: character.name }}">
+              <router-link
+                  :to="{ name: 'character-detail', params: {id: character.char_id }}">
               <div class="block relative h-48 rounded overflow-hidden">
                 <img v-bind:alt="character.name"
                       class="object-contain object-center w-full h-full block"
@@ -62,6 +57,10 @@ export default {
                 <p class="mt-1">{{ character.nickname }}</p>
               </div>
               </router-link>
+              <button class="bg-red-500"
+              >
+                      Ajouter aux favv
+                </button>
             </div>
           </div>
         </div>
@@ -75,7 +74,7 @@ export default {
       <div :class="isOpen ? 'flex': 'hidden'"
             class="  flex-wrap lg:w-4/5 mt-6 sm:mx-auto sm:mb-2 -mx-2">
         <div class="loaderFlex"><div v-if="loading" class="loader"></div></div>
-          <div v-for="quote in quoteInfo"
+          <div v-for="quote in quotes"
                 :key="quote.quote_id" class="p-2 sm:w-1/2 w-full">
             <div class="bg-gray-200 rounded flex p-4 h-full items-center">
                 <svg fill="none" stroke="currentColor"
