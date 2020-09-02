@@ -1,5 +1,9 @@
 <template>
   <div class="container mx-auto px-4">
+    <p v-if="favList.length === 0"
+    class="text-center text-white text-2xl font-bold mt-10 bg-green-700 px-4 py-4 rounded-full">
+      Aucun personnage favori pour l'instant 😪<br/> Ajoutez en 🚀
+    </p>
     <section class="text-gray-700 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap -m-2">

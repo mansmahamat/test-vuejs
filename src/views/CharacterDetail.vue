@@ -47,7 +47,7 @@ export default {
            <div class="loaderFlex"><div v-if="pending" class="loader"></div></div>
     <div
     id="profile"
-    v-for="char in character" v-bind:key="char.id"
+    v-for="character in character" v-bind:key="character.id"
     class="w-full lg:w-3/5 rounded-lg
     lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-green-700 text-white mx-6 lg:mx-0">
 
@@ -55,28 +55,28 @@ export default {
         <div
         class="block lg:hidden rounded-full shadow-xl
          mx-auto -mt-16 h-48 w-48 bg-cover bg-top"
-        :style="{'background-image':`url('${char.img}')`}">
+        :style="{'background-image':`url('${character.img}')`}">
         </div>
 
-            <h1 class="text-3xl font-bold pt-8 lg:pt-0">{{char.name}}</h1>
+            <h1 class="text-3xl font-bold pt-8 lg:pt-0">{{character.name}}</h1>
             <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-teal-500 opacity-25"></div>
             <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
-                Date de naissance : {{ char.birthday }}
+                Date de naissance : {{ character.birthday }}
             </p>
            <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
-                Rôle : {{ char.occupation[0] }}
+                Rôle : {{ character.occupation[0] }}
             </p>
             <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
-                Surnom : {{ char.nickname }}
+                Surnom : {{ character.nickname }}
             </p>
             <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
-                Statut : {{ char.status }}
+                Statut : {{ character.status }}
             </p>
             <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
-                Acteur : {{ char.portrayed }}
+                Acteur : {{ character.portrayed }}
             </p>
             <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
-                Apparition : Saison {{ char.appearance }}
+                Apparition : Saison {{ character.appearance }}
             </p>
 
             <div class="pt-12 pb-8">
@@ -84,37 +84,6 @@ export default {
                 class="text-green-700 focus:outline-none bg-white font-bold py-2 px-4 rounded-full">
                  Retour
         </button>
-         <button
-          v-if="favList.find((item) => {
-    return item.character.char_id === char.id;
-  })"
-          @click.prevent="showError()"
-
-          class="rounded-full w-10 h-10  my-4 bg-gray-200 focus:outline-none
-          p-0 border-0 inline-flex items-center justify-center text-red-600 ml-4">
-            <svg fill="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-              <path
-                    d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12
-                        5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06
-                        1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-            </svg>
-          </button>
-                          <button
-                          v-else
-          @click.prevent="addToFavList(), showAlert()"
-          class="rounded-full w-10 h-10  my-4 bg-gray-200 focus:outline-none
-          p-0 border-0 inline-flex items-center justify-center text-green-600 ml-4">
-            <svg fill="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-              <path
-                    d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12
-                        5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06
-                        1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-            </svg>
-          </button>
         </div>
     </div>
 

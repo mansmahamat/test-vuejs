@@ -70,11 +70,11 @@ export default {
     },
     showAlert() {
       // Use sweetalert2
-      this.$swal('Personnage ajouté aux favoris 🐱‍🏍👏👏');
+      this.$swal('Personnage ajouté aux favoris ❤');
     },
     showError() {
       // Use sweetalert2
-      this.$swal('Personnage déjà en favori 🎃😏');
+      this.$swal('Personnage déjà en favori 🤡');
     },
   },
 };

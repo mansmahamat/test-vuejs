@@ -56,16 +56,18 @@
 
                     <div class="lg:w-1/4 w-full">
                         <div class="flex items-baseline text-black justify-start mb-2">
-                            <a href="#" class="mr-2">
-                                dd
+                            <a href="https://www.linkedin.com/in/mansour-mahamat-salle-138b73138/"
+                                class="mr-2"
+                                target="_blank">
+                                <i class="fab fa-linkedin text-2xl"></i>
                             </a>
 
-                            <a href="#" class="mr-2">
-                                dd
+                            <a href="https://github.com/mansmahamat" target="_blank" class="mr-2">
+                                <i class="fab fa-github-square text-2xl"></i>
                             </a>
 
-                            <a href="#">
-                                dd
+                            <a href="http://mansour-mahamat.fr/" target="_blank">
+                                <i class="fas fa-globe-africa text-2xl"></i>
                             </a>
                         </div>
 
