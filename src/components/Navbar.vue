@@ -25,6 +25,10 @@
                       class="block mt-4 sm:inline-block sm:mt-0 text-teal-lighter mr-4 ">
           Tout les personnages
         </router-link>
+        <router-link to="/favourites"
+                      class="block mt-4 sm:inline-block sm:mt-0 text-teal-lighter mr-4 ">
+          Favoris
+        </router-link>
       </div>
     </div>
   </nav>

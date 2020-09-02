@@ -25,3 +25,11 @@ export const getCharacter = ({ commit }, id) => {
     })
     .catch((error) => { console.log(error); });
 };
+
+export const addCharacterToFav = ({ commit }, { character, quantity }) => {
+  commit('ADD_TO_FAVLIST', { character, quantity });
+};
+
+export const removeFavFromList = ({ commit }, character) => {
+  commit('REMOVE_TO_FAVLIST', character);
+};

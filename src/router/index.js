@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import CharacterDetail from '../views/CharacterDetail.vue';
+import Favourites from '../views/Favourites.vue';
 
 Vue.use(VueRouter);
 
@@ -20,8 +21,13 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Personnages.vue'),
   },
   {
+    path: '/favourites',
+    name: 'Favourites',
+    component: Favourites,
+  },
+  {
     path: '/:id',
-    name: 'character-detail',
+    name: 'characterDetail',
     component: CharacterDetail,
     props: true,
   },

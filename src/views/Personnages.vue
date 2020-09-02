@@ -1,7 +1,11 @@
 <script>
+import CartCharacter from '../components/CartCharacter.vue';
 
 export default {
   name: 'Personnages',
+  components: {
+    CartCharacter,
+  },
   data() {
     return {
       pending: false,
@@ -39,29 +43,10 @@ export default {
     <div class="loaderFlex"><div v-if="pending" class="loader"></div></div>
       <section class="text-gray-700 body-font">
         <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-wrap -m-4">
-            <div v-for="character in characters"
-                  :key="character.char_id" class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <router-link
-                  :to="{ name: 'character-detail', params: {id: character.char_id }}">
-              <div class="block relative h-48 rounded overflow-hidden">
-                <img v-bind:alt="character.name"
-                      class="object-contain object-center w-full h-full block"
-                      v-bind:src="character.img" >
-              </div>
-              <div class="mt-4 text-center">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
-                    Saison : {{ character.appearance }}
-                </h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">{{ character.name }}</h2>
-                <p class="mt-1">{{ character.nickname }}</p>
-              </div>
-              </router-link>
-              <button class="bg-red-500"
-              >
-                      Ajouter aux favv
-                </button>
-            </div>
+          <div class="flex  flex-wrap -m-4">
+             <CartCharacter v-for="character in characters"
+                  :key="character.char_id"
+                  :character="character" />
           </div>
         </div>
 
