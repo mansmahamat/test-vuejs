@@ -6,7 +6,11 @@
 /* eslint-disable quote-props */
 /* eslint-disable linebreak-style */
 module.exports = {
-  purge: [],
+  purge: [
+    './src/**/*.html',
+    './src/**/*.vue',
+    './src/**/*.jsx',
+  ],
   target: 'relaxed',
   prefix: '',
   important: false,

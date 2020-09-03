@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="bg-gray-900 text-white">
     <Navbar />
     <router-view/>
     <Footer />
@@ -7,7 +7,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 

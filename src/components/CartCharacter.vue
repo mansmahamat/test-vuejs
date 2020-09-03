@@ -2,10 +2,9 @@
     <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <router-link
                   :to="{ name: 'characterDetail', params: {id: character.char_id }}">
-              <div class="block bg-green-700 py-2 px-2 relative h-48 rounded overflow-hidden">
-                <img :alt="character.name"
-                      class="object-contain object-center w-full h-full block"
-                      :src="character.img" >
+              <div  :style="{'background-image':`url('${character.img}')`}"
+              class="block bg-cover bg-top bg-no-repeat
+              py-2 px-2 relative h-48 rounded overflow-hidden">
               </div>
               </router-link>
               <div class="-mt-4 bg-green-700 text-center">

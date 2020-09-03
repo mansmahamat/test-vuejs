@@ -24,7 +24,6 @@ export default {
       // API loading animation, error message, API response
       pending: false,
       error: null,
-      characterInfo: null,
     };
   },
   computed: {
@@ -91,7 +90,6 @@ export default {
 <div  v-for="char in character" v-bind:key="char.id" class="w-full lg:w-2/5">
 
     <img v-bind:src="char.img" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
-    <!-- Image from: http://unsplash.com/photos/MP0IUfwrn0A -->
 
     </div>
 

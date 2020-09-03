@@ -2,7 +2,10 @@
   <div class="container mx-auto px-4">
     <p v-if="favList.length === 0"
     class="text-center text-white text-2xl font-bold mt-10 bg-green-700 px-4 py-4 rounded-full">
-      Aucun personnage favori pour l'instant 😪<br/> Ajoutez en 🚀
+      Aucun personnage favori pour l'instant 😪<br/>
+      <router-link to="/personnages">
+          Ajoutez en 🚀
+      </router-link>
     </p>
     <section class="text-gray-700 body-font">
   <div class="container px-5 py-24 mx-auto">
@@ -19,11 +22,13 @@
                 :src="item.character.img">
           <div class="flex-grow">
             <h2 class="text-white font-extrabold">{{ item.character.name }}</h2>
-            <p class="text-red-500 font-bold bg-white">A.K.A {{ item.character.nickname }}</p>
+            <p class="text-gray-900 rounded font-bold bg-white">
+              A.K.A {{ item.character.nickname }}
+            </p>
           </div>
           </router-link>
           <button @click.prevent="removeFavFromList(item.character), showAlert()"
-          class="bg-white font-black py-2 px-2 rounded-lg text-red-700">
+          class="text-white font-black py-2 px-2 rounded-lg bg-red-700">
             Suppimer
           </button>
         </div>
@@ -36,7 +41,7 @@
   </div>
 </template>
 <script>
-// @ is an alias to /src
+
 export default {
   name: 'Favourites',
   computed: {
